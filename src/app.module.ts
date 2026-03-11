@@ -2,8 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TasksModule } from './modules/tasks/tasks.module';
-import { ApiModule } from './api/api.module';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -15,7 +14,7 @@ import { ApiModule } from './api/api.module';
       isGlobal: true, // Makes ConfigService available globally
     }),
     TasksModule,
-    ApiModule,
+  
     // ... other modules
   ],
   controllers: [AppController],
